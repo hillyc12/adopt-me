@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const useDropdown = (label2, defaultState, options) => {
   const [state, setState] = useState(defaultState);
-  console.log(label2);
+  // console.log(label2);
   const id = `use-dropdown-${label2.replace(" ", "").toLowerCase()}`;
   const Dropdown = () => (
     <label htmlFor={id}>
@@ -14,7 +14,8 @@ const useDropdown = (label2, defaultState, options) => {
         onBlur={(e) => setState(e.target.value)}
         disabled={!options.length}
       >
-        <option />
+        <option>All</option>
+
         {options.map((item) => (
           <option key={item} value={item}>
             {item}
